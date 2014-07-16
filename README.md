@@ -15,17 +15,19 @@ An object in your application registers a block to be executed whenever the netw
 
 ```objc
 - (void)someSetupMethod {
-  __weak typeof(self) weakSelf = self;
-  [[JTSReachabilityResponder sharedInstance] addHandler:^(JTSNetworkStatus status) {
-    // Respond to the value of "status"
-  } forKey:@"MyReachabilityKey"];
-}
+    __weak typeof(self) weakSelf = self;
+    JTSReachabilityResponder *responder = [JTSReachabilityResponder sharedInstance];
+    [responder addHandler:^(JTSNetworkStatus status) {
+        // Respond to the value of "status"
+    } forKey:@"MyReachabilityKey"];
+} 
 ```
 
 Your object is responsible for cleaning up after itself, typically in `dealloc`, as follows:
 
 ```objc
 - (void)dealloc {
-    [[JTSReachabilityResponder sharedInstance] removeHandlerForKey:@"MyReachabilityKey"];
+    JTSReachabilityResponder *responder = [JTSReachabilityResponder sharedInstance];
+    [responder removeHandlerForKey:@"MyReachabilityKey"];
 }
 ```
