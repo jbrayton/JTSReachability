@@ -68,11 +68,11 @@
 
 - (void)reachabilityChanged:(NSNotification *)notification {
     JTSNetworkStatus status = [_reachabilityInstance currentReachabilityStatus];
-    dispatch_async(dispatch_get_main_queue(), ^{
+    //    dispatch_async(dispatch_get_main_queue(), ^{
         for (JTSReachabilityHandler handler in _handlers.allValues) {
             handler(status);
         }
-    });
+    //});
 }
 
 @end

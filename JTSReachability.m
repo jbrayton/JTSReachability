@@ -16,7 +16,7 @@
 #import "JTSReachability.h"
 
 
-NSString *JTSReachabilityChangedNotification = @"kNetworJTSReachabilityChangedNotification";
+NSString *JTSReachabilityChangedNotification = @"JTSReachabilityChangedNotification";
 
 
 #pragma mark - Supporting functions
@@ -227,7 +227,11 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 		/*
          ... but WWAN connections are OK if the calling application is using the CFNetwork APIs.
          */
-		returnValue = ReachableViaWWAN;
+        if (flags & kSCNetworkReachabilityFlagsConnectionRequired) {
+            returnValue = NotReachable;
+        } else {
+            returnValue = ReachableViaWWAN;
+        }
 	}
     
 	return returnValue;
