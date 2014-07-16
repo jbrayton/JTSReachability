@@ -15,7 +15,6 @@ An object in your application registers a block to be executed whenever the netw
 
 ```objc
 - (void)someSetupMethod {
-    __weak typeof(self) weakSelf = self;
     JTSReachabilityResponder *responder = [JTSReachabilityResponder sharedInstance];
     [responder addHandler:^(JTSNetworkStatus status) {
         // Respond to the value of "status"
