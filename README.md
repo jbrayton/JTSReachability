@@ -8,7 +8,7 @@ JTSReachability
 Usage is straightforward. Access the singleton instance of `JTSReachabilityResponder` via:
 
 ```objc
-- (instancetype)sharedInstance;
++ (instancetype)sharedInstance;
 ```
 
 An object in your application registers a block to be executed whenever the network status changes between one of the three known states (none, Wi-fi, or cellular) as follows:
