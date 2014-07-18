@@ -34,3 +34,5 @@ Your object is responsible for cleaning up after itself, typically in `dealloc`,
     [responder removeHandlerForKey:@"MyReachabilityKey"];
 }
 ```
+
+All blocks are called on the main thread, and must be added or removed on the main thread.
