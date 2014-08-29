@@ -19,6 +19,8 @@
 
 @implementation JTSReachabilityResponder
 
+#pragma mark - Public
+
 + (instancetype)sharedInstance {
     static dispatch_once_t once;
     static JTSReachabilityResponder * sharedInstance;
@@ -26,24 +28,14 @@
     return sharedInstance;
 }
 
-- (void)dealloc {
-    [self removeListening:_reachabilityInstance];
-    [_reachabilityInstance stopNotifier];
-}
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        _reachabilityInstance = [JTSReachability reachabilityForInternetConnection];
-        [self addListening:_reachabilityInstance];
-        [_reachabilityInstance startNotifier];
-        _handlers = [[NSMutableDictionary alloc] init];
+- (instancetype)initWithOptionalHostname:(NSString *)hostname {
+    JTSReachability *reachability = nil;
+    if (hostname) {
+        reachability = [JTSReachability reachabilityWithHostName:hostname];
+    } else {
+        reachability = [JTSReachability reachabilityForInternetConnection];
     }
-    return self;
-}
-
-- (JTSNetworkStatus)networkStatus {
-    return _reachabilityInstance.currentReachabilityStatus;
+    return [self initWithReachability:reachability];
 }
 
 - (BOOL)isReachable {
@@ -58,6 +50,30 @@
     [_handlers removeObjectForKey:key];
 }
 
+- (JTSNetworkStatus)networkStatus {
+    return _reachabilityInstance.currentReachabilityStatus;
+}
+
+#pragma mark - NSObject
+
+- (void)dealloc {
+    [self removeListening:_reachabilityInstance];
+    [_reachabilityInstance stopNotifier];
+}
+
+#pragma mark - Private
+
+- (instancetype)initWithReachability:(JTSReachability *)reachability {
+    self = [super init];
+    if (self) {
+        _reachabilityInstance = reachability;
+        [self addListening:_reachabilityInstance];
+        [_reachabilityInstance startNotifier];
+        _handlers = [[NSMutableDictionary alloc] init];
+    }
+    return self;
+}
+
 - (void)addListening:(JTSReachability *)reachability {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:JTSReachabilityChangedNotification object:reachability];
 }
@@ -68,11 +84,9 @@
 
 - (void)reachabilityChanged:(NSNotification *)notification {
     JTSNetworkStatus status = [_reachabilityInstance currentReachabilityStatus];
-    //    dispatch_async(dispatch_get_main_queue(), ^{
-        for (JTSReachabilityHandler handler in _handlers.allValues) {
-            handler(status);
-        }
-    //});
+    for (JTSReachabilityHandler handler in _handlers.allValues) {
+        handler(status);
+    }
 }
 
 @end
