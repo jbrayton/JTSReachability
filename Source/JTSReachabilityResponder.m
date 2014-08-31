@@ -24,7 +24,9 @@
 + (instancetype)sharedInstance {
     static dispatch_once_t once;
     static JTSReachabilityResponder * sharedInstance;
-    dispatch_once(&once, ^ { sharedInstance = [[self alloc] init]; });
+    dispatch_once(&once, ^ {
+        sharedInstance = [[self alloc] initWithOptionalHostname:nil];
+    });
     return sharedInstance;
 }
 
