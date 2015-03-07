@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JTSReachability"
-  s.version      = "1.1.0"
+  s.version      = "1.2.0"
   s.summary      = "Adaptation of Apple's Reachability with some block-based conveniences."
   s.homepage     = "https://github.com/jaredsinclair/JTSReachability"
   s.license      = { :type => 'MIT', :file => 'LICENSE'  }
