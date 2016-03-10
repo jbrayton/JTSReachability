@@ -11,11 +11,11 @@
 #import <netinet/in.h>
 
 
-typedef enum : NSInteger {
-	NotReachable = 0,
-	ReachableViaWiFi,
-	ReachableViaWWAN
-} JTSNetworkStatus;
+typedef NS_ENUM(NSInteger, JTSNetworkStatus) {
+    NotReachable = 0,
+    ReachableViaWiFi,
+    ReachableViaWWAN
+};
 
 
 extern NSString *JTSReachabilityChangedNotification;
