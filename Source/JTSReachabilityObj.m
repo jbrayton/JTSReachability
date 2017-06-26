@@ -13,7 +13,7 @@
 
 #import <CoreFoundation/CoreFoundation.h>
 
-#import "JTSReachability.h"
+#import "JTSReachabilityObj.h"
 
 
 NSString *JTSReachabilityChangedNotification = @"JTSReachabilityChangedNotification";
