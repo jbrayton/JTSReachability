@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21391D741F01977D000B57C9 /* JTSReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 21391D701F01977D000B57C9 /* JTSReachability.h */; };
+		21391D741F01977D000B57C9 /* JTSReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 21391D701F01977D000B57C9 /* JTSReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21391D751F01977D000B57C9 /* JTSReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 21391D711F01977D000B57C9 /* JTSReachability.m */; };
-		21391D761F01977D000B57C9 /* JTSReachabilityResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 21391D721F01977D000B57C9 /* JTSReachabilityResponder.h */; };
+		21391D761F01977D000B57C9 /* JTSReachabilityResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 21391D721F01977D000B57C9 /* JTSReachabilityResponder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21391D771F01977D000B57C9 /* JTSReachabilityResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 21391D731F01977D000B57C9 /* JTSReachabilityResponder.m */; };
-		21F330281F01975900D0E1CC /* JTSReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 21F330261F01975900D0E1CC /* JTSReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +19,6 @@
 		21391D721F01977D000B57C9 /* JTSReachabilityResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JTSReachabilityResponder.h; path = Source/JTSReachabilityResponder.h; sourceTree = SOURCE_ROOT; };
 		21391D731F01977D000B57C9 /* JTSReachabilityResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JTSReachabilityResponder.m; path = Source/JTSReachabilityResponder.m; sourceTree = SOURCE_ROOT; };
 		21F330231F01975900D0E1CC /* JTSReachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JTSReachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		21F330261F01975900D0E1CC /* JTSReachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTSReachability.h; sourceTree = "<group>"; };
 		21F330271F01975900D0E1CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,7 +52,6 @@
 		21F330251F01975900D0E1CC /* JTSReachability */ = {
 			isa = PBXGroup;
 			children = (
-				21F330261F01975900D0E1CC /* JTSReachability.h */,
 				21F330271F01975900D0E1CC /* Info.plist */,
 				21391D701F01977D000B57C9 /* JTSReachability.h */,
 				21391D711F01977D000B57C9 /* JTSReachability.m */,
@@ -71,9 +68,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21391D761F01977D000B57C9 /* JTSReachabilityResponder.h in Headers */,
-				21F330281F01975900D0E1CC /* JTSReachability.h in Headers */,
 				21391D741F01977D000B57C9 /* JTSReachability.h in Headers */,
+				21391D761F01977D000B57C9 /* JTSReachabilityResponder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
