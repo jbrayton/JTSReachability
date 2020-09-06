@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		212026631F01C1F600219EA5 /* JTSReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 212026621F01C1F600219EA5 /* JTSReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		21391D741F01977D000B57C9 /* JTSReachabilityObj.h in Headers */ = {isa = PBXBuildFile; fileRef = 21391D701F01977D000B57C9 /* JTSReachabilityObj.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21391D751F01977D000B57C9 /* JTSReachabilityObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 21391D711F01977D000B57C9 /* JTSReachabilityObj.m */; };
-		21391D761F01977D000B57C9 /* JTSReachabilityResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 21391D721F01977D000B57C9 /* JTSReachabilityResponder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21391D771F01977D000B57C9 /* JTSReachabilityResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 21391D731F01977D000B57C9 /* JTSReachabilityResponder.m */; };
+		218D72D125056480002093F7 /* JTSReachabilityObj.h in Headers */ = {isa = PBXBuildFile; fileRef = 21391D701F01977D000B57C9 /* JTSReachabilityObj.h */; };
+		218D72D225056480002093F7 /* JTSReachabilityResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 21391D721F01977D000B57C9 /* JTSReachabilityResponder.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,8 +72,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				212026631F01C1F600219EA5 /* JTSReachability.h in Headers */,
-				21391D741F01977D000B57C9 /* JTSReachabilityObj.h in Headers */,
-				21391D761F01977D000B57C9 /* JTSReachabilityResponder.h in Headers */,
+				218D72D125056480002093F7 /* JTSReachabilityObj.h in Headers */,
+				218D72D225056480002093F7 /* JTSReachabilityResponder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
