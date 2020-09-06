@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "JTSReachabilityObj.h"
+#import <JTSReachability/JTSReachabilityObj.h>
 
 typedef void(^JTSReachabilityHandler)(JTSNetworkStatus status);
 
