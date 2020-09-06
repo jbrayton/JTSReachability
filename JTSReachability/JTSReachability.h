@@ -10,7 +10,7 @@
 #define JTSReachabilityFramework_h
 
 
-#import <JTSReachability/JTSReachability.h>
+#import <JTSReachability/JTSReachabilityObj.h>
 #import <JTSReachability/JTSReachabilityResponder.h>
 
 #endif /* JTSReachabilityFramework_h */
